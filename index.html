@@ -1,38 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Locais</title>
+  <title>Taxas e Lista de Locais</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .header {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 10px;
+    }
+
+    .taxas-valores p {
+      margin: 0;
+      padding: 5px 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .taxas-valores p span {
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    table th, table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
-  <h2>Informações de Taxas e Valores</h2>
-  <p>Mudança de endereço: R$69,90</p>
-  <p>Mudança de cômodo ou parede: R$50,00</p>
-  <p>Passagem do cabo de rede: R$30,00</p>
-  <p>IP fixo: R$29,90</p>
-  <p>Equipamento resetado ou mal uso: R$30,00</p>
-  <p>Suporte/Configurar/Alteração de senha em roteador próprio: R$30,00</p>
-  <p>Acesso lento (Caso o problema seja em aparelho do cliente): R$30,00</p>
-  <p>Entrega de carnê: Zona Urbana - R$10,00 | Zona Rural - R$20,00</p>
-  <p>Cabo de rede CAT 5: R$3,00 | CAT 6: R$5,00</p>
-  <p>Adesão ao roteador: R$100,00 (à vista ou em até 3x no cartão) ou R$120,00 (em até 12x nas mensalidades)</p>
+  <div class="header">Informações de Taxas e Valores</div>
+  <div class="taxas-valores">
+    <p><span>Mudança de endereço:</span> R$ 69,90</p>
+    <p><span>Mudança de cômodo ou parede:</span> R$ 50,00</p>
+    <p><span>Passagem do cabo de rede:</span> R$ 30,00</p>
+    <p><span>IP fixo:</span> R$ 29,90</p>
+    <p><span>Equipamento resetado ou mal uso:</span> R$ 30,00</p>
+    <p><span>Suporte/Configurar/Alteração de senha em roteador próprio:</span> R$ 30,00</p>
+    <p><span>Acesso lento (Caso o problema seja em aparelho do cliente):</span> R$ 30,00</p>
+    <p><span>Entrega de carnê:</span> Zona Urbana - R$ 10,00 | Zona Rural - R$ 20,00</p>
+    <p><span>Cabo de rede:</span> CAT 5 - R$ 3,00 | CAT 6 - R$ 5,00</p>
+    <p><span>Adesão ao roteador:</span> R$ 100,00 (à vista ou em até 3x no cartão) ou R$ 120,00 (em até 12x nas mensalidades)</p>
+  </div>
+</div>
 
-  <h2>Lista de Locais</h2>
-  <table class="table table-striped" id="sortable-table">
-    <thead>
-      <tr>
-        <th>Localidade</th>
-        <th>Cidade</th>
-        <th>Taxa</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Juazeiro do Norte -->
+<div class="container">
+  <div class="header">Lista de Locais</div>
+  <div class="table-container">
+    <table class="table table-striped" id="sortable-table">
+      <thead>
+        <tr>
+          <th>Localidade</th>
+          <th>Cidade</th>
+          <th>Taxa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Juazeiro do Norte -->
       <tr>
         <td>Sitio Carás do Umari</td>
         <td>Juazeiro do Norte</td>
@@ -225,21 +280,23 @@
         <td>Crato</td>
         <td>Não Cobra</td>
       </tr>
-    </tbody>
-  </table>
+        <!-- Adicione mais locais conforme necessário -->
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<!-- Adicionando a biblioteca DataTables e configurando -->
+<!-- Scripts para DataTables -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 <script>
   $(document).ready(function() {
     $('#sortable-table').DataTable({
-      "searching": true, // Habilita a busca por localidade
-      "ordering": true, // Habilita a classificação por coluna
+      "searching": true,
+      "ordering": true,
       "language": {
-        "search": "Buscar Localidade:" // Define o texto para o campo de busca
+        "search": "Buscar Localidade:"
       }
     });
   });
