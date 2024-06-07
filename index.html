@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Locais</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Informações de Taxas e Valores</h2>
+  <p>Mudança de endereço: R$69,90</p>
+  <p>Mudança de cômodo ou parede: R$50,00</p>
+  <p>Passagem do cabo de rede: R$30,00</p>
+  <p>IP fixo: R$29,90</p>
+  <p>Equipamento resetado ou mal uso: R$30,00</p>
+  <p>Suporte/Configurar/Alteração de senha em roteador próprio: R$30,00</p>
+  <p>Acesso lento (Caso o problema seja em aparelho do cliente): R$30,00</p>
+  <p>Entrega de carnê: Zona Urbana - R$10,00 | Zona Rural - R$20,00</p>
+  <p>Cabo de rede CAT 5: R$3,00 | CAT 6: R$5,00</p>
+  <p>Adesão ao roteador: R$100,00 (à vista ou em até 3x no cartão) ou R$120,00 (em até 12x nas mensalidades)</p>
+  
+  <h2>Lista de Locais</h2>
+  <table class="table table-striped" id="sortable-table">
+    <thead>
+      <tr>
+        <th>Localidade</th>
+        <th>Cidade</th>
+        <th>Taxa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Juazeiro do Norte -->
+      <tr>
+        <td>Sitio Carás do Umari</td>
+        <td>Juazeiro do Norte</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Porções</td>
+        <td>Juazeiro do Norte</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Barro Branco</td>
+        <td>Juazeiro do Norte</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Espinho</td>
+        <td>Juazeiro do Norte</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Junco</td>
+        <td>Juazeiro do Norte</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Amaro Coelho</td>
+        <td>Juazeiro do Norte</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Moleque</td>
+        <td>Juazeiro do Norte</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Várzea da Ema</td>
+        <td>Juazeiro do Norte</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Taquari</td>
+        <td>Juazeiro do Norte</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Chumbada</td>
+        <td>Juazeiro do Norte</td>
+        <td>Cobra</td>
+      </tr>
+
+      <!-- Caririaçu -->
+      <tr>
+        <td>Sitio Genipapo</td>
+        <td>Caririaçu</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Genipapeiro</td>
+        <td>Caririaçu</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Umburanas</td>
+        <td>Caririaçu</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Cipó</td>
+        <td>Caririaçu</td>
+        <td>Cobra</td>
+      </tr>
+
+      <!-- Missão Velha -->
+      <tr>
+        <td>Sitio Lagoa da Pedra</td>
+        <td>Missão Velha</td>
+        <td>Cobra</td>
+      </tr>
+      <tr>
+        <td>Sitio Arraial</td>
+        <td>Missão Velha</td>
+        <td>Cobra</td>
+      </tr>
+
+      <!-- Crato -->
+      <tr>
+        <td>Vista Bela</td>
+        <td>Crato</td>
+        <td>Não Cobra</td>
+      </tr>
+      <tr>
+        <td>Quebra Vila Cicero</td>
+        <td>Crato</td>
+        <td>Não Cobra</td>
+      </tr>
+      <tr>
+        <td>Padre Vila</td>
+        <td>Crato</td>
+        <td>Não Cobra</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Adicionando a biblioteca DataTables e configurando -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#sortable-table').DataTable({
+      "searching": true, // Habilita a busca por localidade
+      "ordering": true, // Habilita a classificação por coluna
+      "language": {
+        "search": "Buscar Localidade:" // Define o texto para o campo de busca
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
